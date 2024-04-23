@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
     "name": "coolsam/modules",
     "description": "Support for nwidart/laravel-modules in filamentphp",
     "keywords": [
@@ -8,16 +7,6 @@
         "modules"
     ],
     "homepage": "https://github.com/coolsam/modules",
-=======
-    "name": "savannabits/filament-modules",
-    "description": "Use Filamentphp with nwiDart/laravel-modules",
-    "keywords": [
-        "savannabits",
-        "laravel",
-        "filament-modules"
-    ],
-    "homepage": "https://github.com/savannabits/filament-modules",
->>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
     "license": "MIT",
     "authors": [
         {
@@ -27,21 +16,11 @@
         }
     ],
     "require": {
-<<<<<<< HEAD
         "php": "^8.1",
         "spatie/laravel-package-tools": "^1.14.0",
         "illuminate/contracts": "^9.1|^10.0|^11.0",
         "filament/filament": "^3.0.0-beta",
         "nwidart/laravel-modules": "^10.0"
-=======
-        "php": "^8.0",
-        "filament/filament": "^2.0",
-        "illuminate/contracts": "^9.0",
-        "livewire/livewire": "^2.10",
-        "mhmiton/laravel-modules-livewire": "^1.5",
-        "nwidart/laravel-modules": "^9.0",
-        "spatie/laravel-package-tools": "^1.13.5"
->>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
     },
     "require-dev": {
         "laravel/pint": "^1.0",
@@ -54,21 +33,12 @@
     },
     "autoload": {
         "psr-4": {
-<<<<<<< HEAD
             "Coolsam\\FilamentModules\\": "src/"
-=======
-            "Savannabits\\FilamentModules\\": "src",
-            "Savannabits\\FilamentModules\\Database\\Factories\\": "database/factories"
->>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
         }
     },
     "autoload-dev": {
         "psr-4": {
-<<<<<<< HEAD
             "Coolsam\\FilamentModules\\Tests\\": "tests/"
-=======
-            "Savannabits\\FilamentModules\\Tests\\": "tests"
->>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
         }
     },
     "scripts": {
@@ -88,17 +58,10 @@
     "extra": {
         "laravel": {
             "providers": [
-<<<<<<< HEAD
                 "Coolsam\\FilamentModules\\ModulesServiceProvider"
             ],
             "aliases": {
                 "Modules": "Coolsam\\FilamentModules\\Facades\\Modules"
-=======
-                "Savannabits\\FilamentModules\\FilamentModulesServiceProvider"
-            ],
-            "aliases": {
-                "FilamentModules": "Savannabits\\FilamentModules\\Facades\\FilamentModules"
->>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
             }
         }
     },
