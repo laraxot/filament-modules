@@ -58,6 +58,7 @@ php artisan module:make Blog # Create the blog module
 
 ### Generate a new Panel inside your module
 
+<<<<<<< HEAD
 ```bash
 php artisan module:make-filament-panel admin Blog # php artisan module:make-filament-panel [id] [module]
 ```
@@ -83,6 +84,46 @@ php artisan make:filament-widget BookStats blog::admin
 ```
 
 **All Done!** For each of the panels generated, you can navigate to your `module-path/panel-path` e.g `blog/admin` to acess your panel and links to resources and pages.
+=======
+### The Context's Service Provider
+This package automatically adds each of the generated context's service provider in providers' list in `app.php config`. Be sure to remove this Service Provider in case you delete the context.
+
+## Adding Pages/Resources to Module Context
+
+You may now add filament resources in your FilamentTeams directories. Generate Filament pages/resources/widgets as you normally would. Move them into the context-folder
+and update the namespace. TODO: We will write a command to automatically generate the resources and pages easily.
+
+### ContextualPage & ContextualResource traits
+
+Pages:
+
+```php
+namespace YourNamespace\Resources;
+
+use Savannabits\FilamentModules\Concerns\ContextualPage;
+use Filament\Pages\Page;
+
+class Dashboard extends Page
+{
+    use ContextualPage;
+}
+```
+
+Resources:
+
+```php
+namespace YourNamespace\Resources;
+
+use Savannabits\FilamentModules\Concerns\ContextualResource;
+use Filament\Resources\Resource;
+
+class UserResource extends Resource
+{
+    use ContextualResource;
+}
+```
+
+>>>>>>> 371502e (Bug fix: Config Path)
 ## Testing
 
 ```bash
