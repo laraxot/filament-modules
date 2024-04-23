@@ -225,7 +225,7 @@ abstract class ContextServiceProvider extends PluginServiceProvider
         );
     }
 
-    protected function contextConfig(string $key, string $default = null)
+    protected function contextConfig(string $key, ?string $default = null)
     {
         return Arr::get(config(static::$name), $key, $default);
     }
