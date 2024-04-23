@@ -1,10 +1,6 @@
 The MIT License (MIT)
 
-<<<<<<< HEAD
 Copyright (c) coolsam <smaosa@savannabits.com>
-=======
-Copyright (c) savannabits <smaosa@savannabits.com>
->>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
