@@ -1,6 +1,7 @@
 blank_issues_enabled: false
 contact_links:
   - name: Ask a question
+<<<<<<< HEAD
     url: https://github.com/coolsam/modules/discussions/new?category=q-a
     about: Ask the community for help
   - name: Request a feature
@@ -9,3 +10,16 @@ contact_links:
   - name: Report a security issue
     url: https://github.com/coolsam/modules/security/policy
     about: Learn how to notify us for sensitive bugs
+=======
+    url: https://github.com/savannabits/filament-modules/discussions/new?category=q-a
+    about: Ask the community for help
+  - name: Request a feature
+    url: https://github.com/savannabits/filament-modules/discussions/new?category=ideas
+    about: Share ideas for new features
+  - name: Report a security issue
+    url: https://github.com/savannabits/filament-modules/security/policy
+    about: Learn how to notify us for sensitive bugs
+  - name: Report a bug
+    url: https://github.com/savannabits/filament-modules/issues/new
+    about: Report a reproducable bug
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
