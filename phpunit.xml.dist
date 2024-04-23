@@ -16,7 +16,11 @@
     backupStaticProperties="false"
 >
     <testsuites>
+<<<<<<< HEAD
         <testsuite name="Coolsam Test Suite">
+=======
+        <testsuite name="Savannabits Test Suite">
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
             <directory>tests</directory>
         </testsuite>
     </testsuites>
