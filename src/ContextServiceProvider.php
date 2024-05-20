@@ -18,11 +18,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 use Livewire\Component;
-<<<<<<< HEAD
-=======
-use ReflectionClass;
-use ReflectionException;
->>>>>>> 4af7d7d (Fix styling)
 use Savannabits\FilamentModules\Http\Middleware\ApplyContext;
 use Symfony\Component\Finder\SplFileInfo;
 
@@ -225,11 +220,7 @@ abstract class ContextServiceProvider extends PluginServiceProvider
                         ->append('\\', $file->getRelativePathname())
                         ->replace(['/', '.php'], ['\\', '']);
                 })
-<<<<<<< HEAD
                 ->filter(fn (string $class): bool => is_subclass_of($class, $baseClass) && (! (new \ReflectionClass($class))->isAbstract()))
-=======
-                ->filter(fn (string $class): bool => is_subclass_of($class, $baseClass) && (! (new ReflectionClass($class))->isAbstract()))
->>>>>>> 4af7d7d (Fix styling)
                 ->all(),
         );
     }

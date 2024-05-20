@@ -23,13 +23,6 @@ use Nwidart\Modules\Laravel\Module;
  */
 class BaseLogin extends Component implements HasForms
 {
-<<<<<<< HEAD
-=======
-    public static string $module; // TODO: Implement this.
-
-    public static string $context; // TODO: Implement this
-
->>>>>>> 4af7d7d (Fix styling)
     use InteractsWithForms;
     use WithRateLimiting;
     public static string $module; // TODO: Implement this.
