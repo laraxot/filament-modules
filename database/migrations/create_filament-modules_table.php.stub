@@ -8,7 +8,11 @@ return new class extends Migration
 {
     public function up()
     {
+<<<<<<< HEAD
         Schema::create('modules_table', function (Blueprint $table) {
+=======
+        Schema::create('filament-modules_table', function (Blueprint $table) {
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
             $table->id();
 
             // add fields

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center">
     <a href="https://github.com/savannabits/filament-modules/actions?query=workflow%3Arun-tests+branch%3A3.x"><img alt="Tests" src="https://img.shields.io/github/actions/workflow/status/savannabits/filament-modules/run-tests.yml?branch=3.x&label=tests&style=for-the-badge&logo=github"></a>
     <a href="https://github.com/savannabits/filament-modules/actions?query=workflow%fix-php-code-style-issues+branch%3A3.x"><img alt="Styling" src="https://img.shields.io/github/actions/workflow/status/savannabits/filament-modules/fix-php-code-style-issues.yml?branch=3.x&label=code%20style&style=for-the-badge&logo=github"></a>
@@ -16,6 +17,16 @@ For example, if you have two modules (**Blog** and **Pos**), you should be able 
 - Directory **Modules/Blog/Filament** should enable you to access the admin panel via `http://yoururl/blog/admin`
 - Directory **Modules/Pos/Filament** should enable you to access the admin panel via `http://yoururl/pos/admin`
 - We can even have another context under **Modules/Pos/Filament2** should enable you to access the admin panel via `http://yoururl/pos/admin2` or whichever path you configure for that context.
+=======
+# Use Filamentphp with nwiDart/laravel-modules
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/savannabits/filament-modules.svg?style=flat-square)](https://packagist.org/packages/savannabits/filament-modules)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/savannabits/filament-modules/run-tests?label=tests)](https://github.com/savannabits/filament-modules/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/savannabits/filament-modules/Check%20&%20fix%20styling?label=code%20style)](https://github.com/savannabits/filament-modules/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/savannabits/filament-modules.svg?style=flat-square)](https://packagist.org/packages/savannabits/filament-modules)
+
+
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
 
 Each of the above directories should have their own distinct **Pages, Resources** and **Widgets**. Each of them also has a config under the module's Config folder allowing you to customize a number of parameters per context, e.g the `path`.
 Additionally, each of these can have its own customized login page which redirects back to the module.
@@ -42,11 +53,42 @@ Requirements:
 - You can now install the package via composer:
 
 ```bash
+<<<<<<< HEAD
 composer require coolsam/modules
+=======
+composer require savannabits/filament-modules
+```
+
+You can publish and run the migrations with:
+
+```bash
+php artisan vendor:publish --tag="filament-modules-migrations"
+php artisan migrate
+```
+
+You can publish the config file with:
+
+```bash
+php artisan vendor:publish --tag="filament-modules-config"
+```
+
+Optionally, you can publish the views using
+
+```bash
+php artisan vendor:publish --tag="filament-modules-views"
+```
+
+This is the contents of the published config file:
+
+```php
+return [
+];
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
 ```
 
 ## Usage
 
+<<<<<<< HEAD
 In this guide we are going to use the `Blog module` as an example
 
 ### Create your laravel module:
@@ -54,6 +96,11 @@ If the module that you want to work on does not exist, create it using nwidart/l
 
 ```bash
 php artisan module:make Blog # Create the blog module
+=======
+```php
+$filament-modules = new Savannabits\FilamentModules();
+echo $filament-modules->echoPhrase('Hello, Savannabits!');
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
 ```
 
 ### Generate a new Panel inside your module
@@ -103,7 +150,11 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
+<<<<<<< HEAD
 - [Sam Maosa](https://github.com/coolsam726)
+=======
+- [Sam Maosa](https://github.com/savannabits)
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
 - [All Contributors](../../contributors)
 
 ## License

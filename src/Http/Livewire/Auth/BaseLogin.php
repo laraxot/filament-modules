@@ -22,7 +22,10 @@ use Nwidart\Modules\Laravel\Module;
 class BaseLogin extends Component implements HasForms
 {
     public static string $module; // TODO: Implement this.
+<<<<<<< HEAD
 
+=======
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
     public static string $context; // TODO: Implement this
 
     use InteractsWithForms;
@@ -34,14 +37,19 @@ class BaseLogin extends Component implements HasForms
 
     public ?bool $remember = false;
 
+<<<<<<< HEAD
     private function getModule(): Module
     {
+=======
+    private function getModule(): Module {
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
         return app('modules')->findOrFail(static::$module);
     }
 
     /**
      * @throws \Exception
      */
+<<<<<<< HEAD
     private function getContextName(): string
     {
         $module = $this->getModule();
@@ -49,6 +57,13 @@ class BaseLogin extends Component implements HasForms
             throw new \Exception('Context has to be defined in your class');
         }
 
+=======
+    private function getContextName(): string {
+        $module = $this->getModule();
+        if (!static::$context) {
+            throw new \Exception("Context has to be defined in your class");
+        }
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
         return \Str::of($module->getLowerName())->append('-')->append(\Str::slug(static::$context))->kebab()->toString();
     }
 
@@ -85,7 +100,11 @@ class BaseLogin extends Component implements HasForms
 
         $guardName = config("$name.auth.guard");
 
+<<<<<<< HEAD
         if (! Auth::guard($guardName)->attempt([
+=======
+        if (!Auth::guard($guardName)->attempt([
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
             'email' => $data['email'],
             'password' => $data['password'],
         ], $data['remember'])) {
@@ -95,7 +114,10 @@ class BaseLogin extends Component implements HasForms
         }
 
         $request->session()->regenerate();
+<<<<<<< HEAD
 
+=======
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
         return redirect()->route("$name.pages.dashboard");
     }
 
@@ -120,7 +142,10 @@ class BaseLogin extends Component implements HasForms
     {
         $module = $this->getModule();
         $name = $module->getStudlyName();
+<<<<<<< HEAD
 
+=======
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
         return view('filament::login')
             ->layout('filament::components.layouts.card', [
                 'title' => __("$name Login"),

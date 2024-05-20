@@ -43,7 +43,11 @@ class FilamentModulesServiceProvider extends PluginServiceProvider
             ->hasConfigFile()
             ->hasCommands([
                 FilamentModuleCommand::class,
+<<<<<<< HEAD
                 FilamentGuardCommand::class,
+=======
+                FilamentGuardCommand::class
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
             ]);
     }
 
@@ -54,6 +58,13 @@ class FilamentModulesServiceProvider extends PluginServiceProvider
         });
     }
 
+<<<<<<< HEAD
+=======
+
+    /**
+     * @return void
+     */
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
     public function packageBooted(): void
     {
         Livewire::addPersistentMiddleware([

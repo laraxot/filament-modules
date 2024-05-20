@@ -15,20 +15,34 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
+<<<<<<< HEAD
 use Livewire\Component;
 use ReflectionClass;
 use ReflectionException;
 use Savannabits\FilamentModules\Http\Middleware\ApplyContext;
+=======
+use Savannabits\FilamentModules\Http\Middleware\ApplyContext;
+use Livewire\Component;
+use ReflectionClass;
+use ReflectionException;
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
 use Symfony\Component\Finder\SplFileInfo;
 
 abstract class ContextServiceProvider extends PluginServiceProvider
 {
     public static string $module = '';
+<<<<<<< HEAD
 
     public function packageRegistered(): void
     {
         if (! static::$module) {
             abort(500, 'Your Service Provider MUST set the static::$module variable!');
+=======
+    public function packageRegistered(): void
+    {
+        if (!static::$module) {
+            abort(500,'Your Service Provider MUST set the static::$module variable!');
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
         }
         $this->app->booting(function () {
             $this->registerComponents();
@@ -54,14 +68,24 @@ abstract class ContextServiceProvider extends PluginServiceProvider
 
     protected function bootRoutes()
     {
+<<<<<<< HEAD
         if (! ($this->app instanceof CachesRoutes && $this->app->routesAreCached())) {
             $middleware = array_merge(
                 [ApplyContext::class.':'.static::$name],
+=======
+        if (!($this->app instanceof CachesRoutes && $this->app->routesAreCached())) {
+            $middleware = array_merge(
+                [ApplyContext::class . ':' . static::$name],
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
                 $this->contextConfig('middleware.base') ?? []
             );
             Route::domain($this->contextConfig('domain'))
                 ->middleware($middleware)
+<<<<<<< HEAD
                 ->name(static::$name.'.')
+=======
+                ->name(static::$name . '.')
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
                 ->prefix(Str::of(static::$module)->kebab())
                 ->group(function () {
                     Route::prefix($this->contextConfig('path'))->group(function () {
@@ -75,7 +99,11 @@ abstract class ContextServiceProvider extends PluginServiceProvider
                                 $request->session()->invalidate();
                                 $request->session()->regenerateToken();
 
+<<<<<<< HEAD
                                 return redirect()->route(static::$name.'.auth.login');
+=======
+                                return redirect()->route(static::$name . '.auth.login');
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
                             })->name('logout');
                         }
                         Route::middleware($this->contextConfig('middleware.auth'))
@@ -144,7 +172,11 @@ abstract class ContextServiceProvider extends PluginServiceProvider
 
         $filesystem = app(Filesystem::class);
 
+<<<<<<< HEAD
         if (! $filesystem->isDirectory($directory)) {
+=======
+        if (!$filesystem->isDirectory($directory)) {
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
             return;
         }
         foreach ($filesystem->allFiles($directory) as $file) {
@@ -156,7 +188,11 @@ abstract class ContextServiceProvider extends PluginServiceProvider
                 continue;
             }
 
+<<<<<<< HEAD
             $filePath = Str::of($directory.'/'.$file->getRelativePathname());
+=======
+            $filePath = Str::of($directory . '/' . $file->getRelativePathname());
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
 
             if ($filePath->startsWith($this->contextConfig('resources.path')) && is_subclass_of($fileClass, Resource::class)) {
                 $this->resources[] = $fileClass;
@@ -180,14 +216,24 @@ abstract class ContextServiceProvider extends PluginServiceProvider
                 continue;
             }
 
+<<<<<<< HEAD
             if (! is_subclass_of($fileClass, Component::class)) {
+=======
+            if (!is_subclass_of($fileClass, Component::class)) {
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
                 continue;
             }
 
             $livewireAlias = Str::of($fileClass)
+<<<<<<< HEAD
                 ->after($namespace.'\\')
                 ->replace(['/', '\\'], '.')
                 ->prepend(static::$name.'.')
+=======
+                ->after($namespace . '\\')
+                ->replace(['/', '\\'], '.')
+                ->prepend(static::$name . '.')
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
                 ->explode('.')
                 ->map([Str::class, 'kebab'])
                 ->implode('.');
@@ -208,7 +254,11 @@ abstract class ContextServiceProvider extends PluginServiceProvider
 
         $filesystem = app(Filesystem::class);
 
+<<<<<<< HEAD
         if (! $filesystem->exists($directory)) {
+=======
+        if (!$filesystem->exists($directory)) {
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
             return;
         }
 
@@ -220,12 +270,20 @@ abstract class ContextServiceProvider extends PluginServiceProvider
                         ->append('\\', $file->getRelativePathname())
                         ->replace(['/', '.php'], ['\\', '']);
                 })
+<<<<<<< HEAD
                 ->filter(fn (string $class): bool => is_subclass_of($class, $baseClass) && (! (new ReflectionClass($class))->isAbstract()))
+=======
+                ->filter(fn (string $class): bool => is_subclass_of($class, $baseClass) && (!(new ReflectionClass($class))->isAbstract()))
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
                 ->all(),
         );
     }
 
+<<<<<<< HEAD
     protected function contextConfig(string $key, ?string $default = null)
+=======
+    protected function contextConfig(string $key, string $default = null)
+>>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
     {
         return Arr::get(config(static::$name), $key, $default);
     }
