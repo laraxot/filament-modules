@@ -25,6 +25,7 @@ class BaseLogin extends Component implements HasForms
 {
     use InteractsWithForms;
     use WithRateLimiting;
+
     public static string $module; // TODO: Implement this.
 
     public static string $context; // TODO: Implement this
