@@ -23,7 +23,6 @@ class {{ class }} extends ContextServiceProvider
             static::$name
         );
     }
-<<<<<<< HEAD
 
     public function boot()
     {
@@ -39,6 +38,4 @@ class {{ class }} extends ContextServiceProvider
             });
         });
     }
-=======
->>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
 }

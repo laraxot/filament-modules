@@ -1,16 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Savannabits\FilamentModules\Commands;
 
-<<<<<<< HEAD
 use Filament\Support\Commands\Concerns\CanManipulateFiles;
 use Filament\Support\Commands\Concerns\CanValidateInput;
 use Illuminate\Console\Command;
-=======
-use Illuminate\Console\Command;
-use Filament\Support\Commands\Concerns\CanManipulateFiles;
-use Filament\Support\Commands\Concerns\CanValidateInput;
->>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Str;
 
@@ -54,17 +50,10 @@ class FilamentGuardCommand extends Command
         $middlewareClass = $context->afterLast('\\')->append('Middleware');
 
         $middlewarePath = $middlewareClass
-<<<<<<< HEAD
             ->prepend($directoryPath.'/MiddleWare/')
             ->append('.php');
 
         if (! $this->option('force') && $this->checkForCollision([$middlewarePath])) {
-=======
-            ->prepend($directoryPath . '/MiddleWare/')
-            ->append('.php');
-
-        if (!$this->option('force') && $this->checkForCollision([$middlewarePath])) {
->>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
             return static::INVALID;
         }
 
@@ -80,11 +69,7 @@ class FilamentGuardCommand extends Command
             ->prepend(app_path('Http/Livewire/'))
             ->append('.php');
 
-<<<<<<< HEAD
         if (! $this->option('force') && $this->checkForCollision([$loginPath])) {
-=======
-        if (!$this->option('force') && $this->checkForCollision([$loginPath])) {
->>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
             return static::INVALID;
         }
 
@@ -107,13 +92,8 @@ class FilamentGuardCommand extends Command
     {
         $filesystem = app(Filesystem::class);
 
-<<<<<<< HEAD
         if (! $this->fileExists($stubPath = base_path("stubs/filament/{$stub}.stub"))) {
             $stubPath = __DIR__."/../../stubs/{$stub}.stub";
-=======
-        if (!$this->fileExists($stubPath = base_path("stubs/filament/{$stub}.stub"))) {
-            $stubPath = __DIR__ . "/../../stubs/{$stub}.stub";
->>>>>>> ae35070 (Configured Generation of all necessary files to make Filament work in a module)
         }
 
         $stub = Str::of($filesystem->get($stubPath));
