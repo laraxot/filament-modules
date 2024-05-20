@@ -1,10 +1,7 @@
 <?php
 
-<<<<<<< HEAD
-=======
 declare(strict_types=1);
 
->>>>>>> origin/dev
 namespace Savannabits\FilamentModules\Concerns;
 
 use Filament\Facades\Filament;

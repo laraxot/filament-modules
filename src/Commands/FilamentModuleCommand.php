@@ -1,10 +1,7 @@
 <?php
 
-<<<<<<< HEAD
-=======
 declare(strict_types=1);
 
->>>>>>> origin/dev
 namespace Savannabits\FilamentModules\Commands;
 
 use Filament\Support\Commands\Concerns\CanManipulateFiles;
@@ -231,7 +228,7 @@ class FilamentModuleCommand extends Command
     /**
      * Install the service provider in the application configuration file.
      *
-     * @param  string  $providerClass  | Fully namespaced service class
+     * @param string $providerClass | Fully namespaced service class
      */
     protected function installServiceProvider(string $providerClass, string $after = 'RouteServiceProvider'): void
     {
@@ -247,9 +244,10 @@ class FilamentModuleCommand extends Command
     /**
      * Install the middleware to a group in the application Http Kernel.
      *
-     * @param  string  $after
-     * @param  string  $name
-     * @param  string  $group
+     * @param string $after
+     * @param string $name
+     * @param string $group
+     *
      * @return void
      */
     protected function installMiddlewareAfter($after, $name, $group = 'web')
