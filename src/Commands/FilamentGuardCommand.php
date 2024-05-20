@@ -1,5 +1,10 @@
 <?php
 
+<<<<<<< HEAD
+=======
+declare(strict_types=1);
+
+>>>>>>> origin/dev
 namespace Savannabits\FilamentModules\Commands;
 
 use Filament\Support\Commands\Concerns\CanManipulateFiles;

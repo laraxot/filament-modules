@@ -1,5 +1,10 @@
 <?php
 
+<<<<<<< HEAD
+=======
+declare(strict_types=1);
+
+>>>>>>> origin/dev
 namespace Savannabits\FilamentModules\Http\Livewire\Auth;
 
 use DanHarrin\LivewireRateLimiting\Exceptions\TooManyRequestsException;
@@ -21,13 +26,22 @@ use Nwidart\Modules\Laravel\Module;
  */
 class BaseLogin extends Component implements HasForms
 {
+<<<<<<< HEAD
+=======
+    use InteractsWithForms;
+    use WithRateLimiting;
+
+>>>>>>> origin/dev
     public static string $module; // TODO: Implement this.
 
     public static string $context; // TODO: Implement this
 
+<<<<<<< HEAD
     use InteractsWithForms;
     use WithRateLimiting;
 
+=======
+>>>>>>> origin/dev
     public ?string $email = '';
 
     public ?string $password = '';
@@ -72,12 +86,16 @@ class BaseLogin extends Component implements HasForms
         try {
             $this->rateLimit(5);
         } catch (TooManyRequestsException $exception) {
+<<<<<<< HEAD
             throw ValidationException::withMessages([
                 'email' => __('filament::login.messages.throttled', [
                     'seconds' => $exception->secondsUntilAvailable,
                     'minutes' => ceil($exception->secondsUntilAvailable / 60),
                 ]),
             ]);
+=======
+            throw ValidationException::withMessages(['email' => __('filament::login.messages.throttled', ['seconds' => $exception->secondsUntilAvailable, 'minutes' => ceil($exception->secondsUntilAvailable / 60)])]);
+>>>>>>> origin/dev
         }
         $name = $this->getContextName();
 
@@ -89,9 +107,13 @@ class BaseLogin extends Component implements HasForms
             'email' => $data['email'],
             'password' => $data['password'],
         ], $data['remember'])) {
+<<<<<<< HEAD
             throw ValidationException::withMessages([
                 'email' => __('filament::login.messages.failed'),
             ]);
+=======
+            throw ValidationException::withMessages(['email' => __('filament::login.messages.failed')]);
+>>>>>>> origin/dev
         }
 
         $request->session()->regenerate();
