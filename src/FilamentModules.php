@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Savannabits\FilamentModules;
 
 use Filament\Facades\Filament;
@@ -34,9 +36,6 @@ class FilamentModules
         return $this->currentContext ?? 'filament';
     }
 
-    /**
-     * @return mixed
-     */
     public function getContext()
     {
         return $this->contexts[$this->currentContext ?? 'filament'];
@@ -93,8 +92,6 @@ class FilamentModules
 
     /**
      * Dynamically handle calls into the filament instance.
-     *
-     * @return mixed
      */
     public function __call(string $method, array $parameters)
     {

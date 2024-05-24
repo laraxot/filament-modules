@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Savannabits\FilamentModules;
 
 use Filament\Facades\Filament;
@@ -16,8 +18,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 use Livewire\Component;
-use ReflectionClass;
-use ReflectionException;
 use Savannabits\FilamentModules\Http\Middleware\ApplyContext;
 use Symfony\Component\Finder\SplFileInfo;
 
@@ -110,7 +110,7 @@ abstract class ContextServiceProvider extends PluginServiceProvider
     }
 
     /**
-     * @throws ReflectionException
+     * @throws \ReflectionException
      */
     protected function registerComponents(): void
     {
@@ -152,7 +152,7 @@ abstract class ContextServiceProvider extends PluginServiceProvider
                 ->append('\\', $file->getRelativePathname())
                 ->replace(['/', '.php'], ['\\', '']);
 
-            if ((new ReflectionClass($fileClass))->isAbstract()) {
+            if ((new \ReflectionClass($fileClass))->isAbstract()) {
                 continue;
             }
 
@@ -220,7 +220,7 @@ abstract class ContextServiceProvider extends PluginServiceProvider
                         ->append('\\', $file->getRelativePathname())
                         ->replace(['/', '.php'], ['\\', '']);
                 })
-                ->filter(fn (string $class): bool => is_subclass_of($class, $baseClass) && (! (new ReflectionClass($class))->isAbstract()))
+                ->filter(fn (string $class): bool => is_subclass_of($class, $baseClass) && (! (new \ReflectionClass($class))->isAbstract()))
                 ->all(),
         );
     }
