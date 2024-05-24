@@ -92,6 +92,11 @@ class FilamentModules
 
     /**
      * Dynamically handle calls into the filament instance.
+<<<<<<< HEAD
+=======
+     *
+     * @return mixed
+>>>>>>> edb9da4 (Fix styling)
      */
     public function __call(string $method, array $parameters)
     {
