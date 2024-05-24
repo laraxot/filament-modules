@@ -228,11 +228,7 @@ class FilamentModuleCommand extends Command
     /**
      * Install the service provider in the application configuration file.
      *
-<<<<<<< HEAD
      * @param string $providerClass | Fully namespaced service class
-=======
-     * @param  string  $providerClass  | Fully namespaced service class
->>>>>>> edb9da4 (Fix styling)
      */
     protected function installServiceProvider(string $providerClass, string $after = 'RouteServiceProvider'): void
     {

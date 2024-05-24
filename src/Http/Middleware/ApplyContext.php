@@ -11,11 +11,6 @@ class ApplyContext
 {
     /**
      * Handle an incoming request.
-<<<<<<< HEAD
-=======
-     *
-     * @return mixed
->>>>>>> edb9da4 (Fix styling)
      */
     public function handle(Request $request, \Closure $next, $context)
     {
