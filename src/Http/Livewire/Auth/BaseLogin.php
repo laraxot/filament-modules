@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Savannabits\FilamentModules\Http\Livewire\Auth;
 
 use DanHarrin\LivewireRateLimiting\Exceptions\TooManyRequestsException;
@@ -21,12 +23,10 @@ use Nwidart\Modules\Laravel\Module;
  */
 class BaseLogin extends Component implements HasForms
 {
-    public static string $module; // TODO: Implement this.
-
-    public static string $context; // TODO: Implement this
-
     use InteractsWithForms;
     use WithRateLimiting;
+    public static string $module; // TODO: Implement this.
+    public static string $context; // TODO: Implement this
 
     public ?string $email = '';
 
@@ -72,12 +72,7 @@ class BaseLogin extends Component implements HasForms
         try {
             $this->rateLimit(5);
         } catch (TooManyRequestsException $exception) {
-            throw ValidationException::withMessages([
-                'email' => __('filament::login.messages.throttled', [
-                    'seconds' => $exception->secondsUntilAvailable,
-                    'minutes' => ceil($exception->secondsUntilAvailable / 60),
-                ]),
-            ]);
+            throw ValidationException::withMessages(['email' => __('filament::login.messages.throttled', ['seconds' => $exception->secondsUntilAvailable, 'minutes' => ceil($exception->secondsUntilAvailable / 60)])]);
         }
         $name = $this->getContextName();
 
@@ -89,9 +84,7 @@ class BaseLogin extends Component implements HasForms
             'email' => $data['email'],
             'password' => $data['password'],
         ], $data['remember'])) {
-            throw ValidationException::withMessages([
-                'email' => __('filament::login.messages.failed'),
-            ]);
+            throw ValidationException::withMessages(['email' => __('filament::login.messages.failed')]);
         }
 
         $request->session()->regenerate();
