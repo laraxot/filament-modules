@@ -142,7 +142,7 @@ function confirm(string $question, bool $default = false): bool
         return $default;
     }
 
-    return 'y' === strtolower($answer);
+    return strtolower($answer) === 'y';
 }
 
 function writeln(string $line): void
@@ -159,7 +159,7 @@ function str_after(string $subject, string $search): string
 {
     $pos = strrpos($subject, $search);
 
-    if (false === $pos) {
+    if ($pos === false) {
         return $subject;
     }
 
@@ -342,13 +342,12 @@ class ConsoleColor
     }
 
     /**
-     * @param string|array $style
-     * @param string       $text
+     * @param  string|array  $style
+     * @param  string  $text
+     * @return string
      *
      * @throws InvalidStyleException
      * @throws InvalidArgumentException
-     *
-     * @return string
      */
     public function apply($style, $text)
     {
@@ -376,7 +375,7 @@ class ConsoleColor
         }
 
         $sequences = array_filter($sequences, function ($val) {
-            return null !== $val;
+            return $val !== null;
         });
 
         if (empty($sequences)) {
@@ -387,7 +386,7 @@ class ConsoleColor
     }
 
     /**
-     * @param bool $forceStyle
+     * @param  bool  $forceStyle
      */
     public function setForceStyle($forceStyle)
     {
@@ -415,8 +414,8 @@ class ConsoleColor
     }
 
     /**
-     * @param string       $name
-     * @param array|string $styles
+     * @param  string  $name
+     * @param  array|string  $styles
      *
      * @throws InvalidArgumentException
      * @throws InvalidStyleException
@@ -448,8 +447,7 @@ class ConsoleColor
     }
 
     /**
-     * @param string $name
-     *
+     * @param  string  $name
      * @return bool
      */
     public function hasTheme($name)
@@ -458,7 +456,7 @@ class ConsoleColor
     }
 
     /**
-     * @param string $name
+     * @param  string  $name
      */
     public function removeTheme($name)
     {
@@ -476,7 +474,7 @@ class ConsoleColor
             // phpcs:ignore Generic.PHP.NoSilencedErrors,PHPCompatibility.FunctionUse.NewFunctions.sapi_windows_vt100_supportFound
             if (function_exists('sapi_windows_vt100_support') && @sapi_windows_vt100_support(STDOUT)) {
                 return true;
-            } elseif (false !== getenv('ANSICON') || 'ON' === getenv('ConEmuANSI')) {
+            } elseif (getenv('ANSICON') !== false || getenv('ConEmuANSI') === 'ON') {
                 return true;
             }
 
@@ -498,7 +496,7 @@ class ConsoleColor
             // phpcs:ignore Generic.PHP.NoSilencedErrors,PHPCompatibility.FunctionUse.NewFunctions.sapi_windows_vt100_supportFound
             return function_exists('sapi_windows_vt100_support') && @sapi_windows_vt100_support(STDOUT);
         } else {
-            return false !== strpos(getenv('TERM'), '256color');
+            return strpos(getenv('TERM'), '256color') !== false;
         }
     }
 
@@ -511,8 +509,7 @@ class ConsoleColor
     }
 
     /**
-     * @param string $name
-     *
+     * @param  string  $name
      * @return string[]
      */
     private function themeSequence($name)
@@ -526,8 +523,7 @@ class ConsoleColor
     }
 
     /**
-     * @param string $style
-     *
+     * @param  string  $style
      * @return string
      */
     private function styleSequence($style)
@@ -542,15 +538,14 @@ class ConsoleColor
 
         preg_match(self::COLOR256_REGEXP, $style, $matches);
 
-        $type = 'bg_' === $matches[1] ? self::BACKGROUND : self::FOREGROUND;
+        $type = $matches[1] === 'bg_' ? self::BACKGROUND : self::FOREGROUND;
         $value = $matches[2];
 
         return "$type;5;$value";
     }
 
     /**
-     * @param string $style
-     *
+     * @param  string  $style
      * @return bool
      */
     private function isValidStyle($style)
@@ -559,8 +554,7 @@ class ConsoleColor
     }
 
     /**
-     * @param string|int $value
-     *
+     * @param  string|int  $value
      * @return string
      */
     private function escSequence($value)
