@@ -35,7 +35,20 @@ Requirements:
 4. Livewire >= 3.0
 5. nwidart/laravel-modules >=10.0
 
+For example, if you have two modules (**Blog** and **Pos**), you should be able to have filament installed in each module with separate resources as below:
+- Directory **Modules/Blog/Filament** should enable you to access the admin panel via `http://yoururl/blog/admin`
+- Directory **Modules/Pos/Filament** should enable you to access the admin panel via `http://yoururl/pos/admin`
+- We can even have another context under **Modules/Pos/Filament2** should enable you to access the admin panel via `http://yoururl/pos/admin2` or whichever path you configure for that context.
+
+Each of the above directories should have their own distinct **Pages, Resources** and **Widgets**. Each of them also has a config under the module's Config folder allowing you to customize a number of parameters per context, e.g the `path`.
+Additionally, each of these can have its own customized login page which redirects back to the module.
+
+You can read more about Multiple Context for Filament [Here](https://github.com/iotronlab/filament-multi-guard).
+
+If this is your goal, then you are in the right place.
+ 
 ## Installation
+Before you proceed, this guide assumes that you have configured your app fully to work with Laravel Modules. If you haven't, follow the [Laravel Modules Docs](https://docs.laravelmodules.com/v9/installation-and-setup) before proceeding.
 
 - Ensure you have insalled and configured [Laravel Modules (follow these instructions)]()
 - Ensure you have installed and configured Filamentphp (follow these instructions)

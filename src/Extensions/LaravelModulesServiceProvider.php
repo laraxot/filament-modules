@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Coolsam\FilamentModules\Extensions;
 
 use Illuminate\Support\Facades\Log;
@@ -11,7 +13,7 @@ class LaravelModulesServiceProvider extends BaseModulesServiceProvider
     {
         $this->registerPanels();
         parent::register();
-        //Log::info('Registered Modules');
+        // Log::info('Registered Modules');
     }
 
     public function registerPanels(): void
