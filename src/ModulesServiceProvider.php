@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace Coolsam\FilamentModules;
 
-use Coolsam\FilamentModules\Commands\ModuleMakePanelCommand;
-use Coolsam\FilamentModules\Extensions\LaravelModulesServiceProvider;
+// use Coolsam\FilamentModules\Commands\ModuleMakePanelCommand;
+// use Coolsam\FilamentModules\Extensions\LaravelModulesServiceProvider;
 use Filament\Facades\Filament;
 use Illuminate\Support\HtmlString;
+use Nwidart\Modules\LaravelModulesServiceProvider;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -22,10 +23,10 @@ class ModulesServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('modules')
-            ->hasConfigFile('modules')
-            ->hasViews()
+            // ->hasConfigFile('modules')
+            // ->hasViews()
             ->hasCommands([
-                ModuleMakePanelCommand::class,
+                // ModuleMakePanelCommand::class,
             ]);
     }
 

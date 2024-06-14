@@ -60,7 +60,7 @@
             "providers": [
                 "Coolsam\\FilamentModules\\ModulesServiceProvider"
             ],
-            "aliases": {
+            "aliases_comment": {
                 "Modules": "Coolsam\\FilamentModules\\Facades\\Modules"
             }
         }
