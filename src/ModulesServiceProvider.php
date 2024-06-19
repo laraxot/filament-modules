@@ -6,11 +6,11 @@ namespace Coolsam\FilamentModules;
 
 // use Coolsam\FilamentModules\Commands\ModuleMakePanelCommand;
 // use Coolsam\FilamentModules\Extensions\LaravelModulesServiceProvider;
-use Illuminate\Support\Str;
 use Filament\Facades\Filament;
 use Illuminate\Support\HtmlString;
-use Spatie\LaravelPackageTools\Package;
+use Illuminate\Support\Str;
 use Nwidart\Modules\LaravelModulesServiceProvider;
+use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class ModulesServiceProvider extends PackageServiceProvider
