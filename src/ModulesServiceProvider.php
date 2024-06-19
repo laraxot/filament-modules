@@ -6,10 +6,11 @@ namespace Coolsam\FilamentModules;
 
 // use Coolsam\FilamentModules\Commands\ModuleMakePanelCommand;
 // use Coolsam\FilamentModules\Extensions\LaravelModulesServiceProvider;
+use Illuminate\Support\Str;
 use Filament\Facades\Filament;
 use Illuminate\Support\HtmlString;
-use Nwidart\Modules\LaravelModulesServiceProvider;
 use Spatie\LaravelPackageTools\Package;
+use Nwidart\Modules\LaravelModulesServiceProvider;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class ModulesServiceProvider extends PackageServiceProvider
@@ -38,7 +39,7 @@ class ModulesServiceProvider extends PackageServiceProvider
 
         $this->app->afterResolving('filament', function () {
             foreach (Filament::getPanels() as $panel) {
-                $id = \Str::of($panel->getId());
+                $id = Str::of($panel->getId());
                 if ($id->contains('::')) {
                     $title = $id->replace(['::', '-'], [' ', ' '])->title()->toString();
                     $panel
