@@ -11,7 +11,7 @@ use Nwidart\Modules\LaravelModulesServiceProvider;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class CoolModulesServiceProvider extends PackageServiceProvider
+class ModulesServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
