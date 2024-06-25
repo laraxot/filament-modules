@@ -1,5 +1,5 @@
 {
-    "name": "coolsam/modules",
+    "name": "coolsam/panel-modules",
     "description": "Support for nwidart/laravel-modules in filamentphp",
     "keywords": [
         "coolsam",
@@ -36,11 +36,6 @@
             "Coolsam\\FilamentModules\\": "src/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Coolsam\\FilamentModules\\Tests\\": "tests/"
-        }
-    },
     "scripts": {
         "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
         "analyse": "vendor/bin/phpstan analyse",
@@ -58,7 +53,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Coolsam\\FilamentModules\\ModulesServiceProvider"
+                "Coolsam\\FilamentModules\\CoolModulesServiceProvider"
             ],
             "aliases_comment": {
                 "Modules": "Coolsam\\FilamentModules\\Facades\\Modules"
