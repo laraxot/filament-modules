@@ -4,11 +4,6 @@ declare(strict_types=1);
 
 namespace Coolsam\FilamentModules;
 
-<<<<<<< HEAD
-// use Coolsam\FilamentModules\Commands\ModuleMakePanelCommand;
-// use Coolsam\FilamentModules\Extensions\LaravelModulesServiceProvider;
-=======
->>>>>>> efe769c (up)
 use Filament\Facades\Filament;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
@@ -25,31 +20,16 @@ class CoolModulesServiceProvider extends PackageServiceProvider
          *
          * More info: https://github.com/spatie/laravel-package-tools
          */
-<<<<<<< HEAD
-        $package
-            ->name('modules')
-            // ->hasConfigFile('modules')
-            // ->hasViews()
-            ->hasCommands([
-                // ModuleMakePanelCommand::class,
-            ]);
-=======
 
         $package
             ->name('cool-modules')
         ;
->>>>>>> efe769c (up)
     }
 
     public function register()
     {
         $this->app->register(LaravelModulesServiceProvider::class);
 
-<<<<<<< HEAD
-        // $this->app->singleton('coolsam-modules', Modules::class);
-
-=======
->>>>>>> efe769c (up)
         $this->app->afterResolving('filament', function () {
             foreach (Filament::getPanels() as $panel) {
                 $id = Str::of($panel->getId());
