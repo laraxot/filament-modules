@@ -22,8 +22,7 @@ class CoolModulesServiceProvider extends PackageServiceProvider
          */
 
         $package
-            ->name('cool-modules')
-        ;
+            ->name('cool-modules');
     }
 
     public function register()
