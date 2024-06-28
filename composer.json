@@ -19,14 +19,14 @@
         "php": "^8.1",
         "spatie/laravel-package-tools": "^1.14.0",
         "illuminate/contracts": "^9.1|^10.0|^11.0",
-        "filament/filament": "^3.0.0-beta",
+        "filament/filament": "^3.2",
         "nwidart/laravel-modules": "^10.0|^11.0"
     },
-    "require-dev_comment": {
+    "require-dev": {
         "laravel/pint": "^1.0",
         "nunomaduro/collision": "^7.9",
-        "orchestra/testbench": "^8.0",
-        "pestphp/pest": "*",
+        "orchestra/testbench": "*",
+        "pestphp/pest": "^2.0",
         "pestphp/pest-plugin-arch": "^2.0",
         "pestphp/pest-plugin-laravel": "^2.0",
         "spatie/laravel-ray": "^1.26"
@@ -34,11 +34,6 @@
     "autoload": {
         "psr-4": {
             "Coolsam\\FilamentModules\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Coolsam\\FilamentModules\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -58,9 +53,9 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Coolsam\\FilamentModules\\ModulesServiceProvider"
+                "Coolsam\\FilamentModules\\CoolModulesServiceProvider"
             ],
-            "aliases": {
+            "aliases_comment": {
                 "Modules": "Coolsam\\FilamentModules\\Facades\\Modules"
             }
         }
