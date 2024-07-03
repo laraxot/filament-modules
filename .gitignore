@@ -11,7 +11,3 @@ testbench.yaml
 vendor
 node_modules
 .git-blame-ignore-revs
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
