@@ -10,8 +10,5 @@ phpstan.neon
 testbench.yaml
 vendor
 node_modules
-<<<<<<< HEAD
-=======
 .git-blame-ignore-revs
 
->>>>>>> origin/dev
