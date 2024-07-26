@@ -28,11 +28,7 @@ class ModulesServiceProvider extends PackageServiceProvider
     public function register()
     {
         $this->app->register(LaravelModulesServiceProvider::class);
-<<<<<<< HEAD
         //$this->app->singleton('coolsam-modules', Modules::class);
-=======
-
->>>>>>> origin/dev
         $this->app->afterResolving('filament', function () {
             foreach (Filament::getPanels() as $panel) {
                 $id = Str::of($panel->getId());
