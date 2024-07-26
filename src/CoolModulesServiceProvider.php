@@ -11,7 +11,7 @@ use Nwidart\Modules\LaravelModulesServiceProvider;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class ModulesServiceProvider extends PackageServiceProvider
+class CoolModulesServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -28,11 +28,7 @@ class ModulesServiceProvider extends PackageServiceProvider
     public function register()
     {
         $this->app->register(LaravelModulesServiceProvider::class);
-<<<<<<< HEAD
-        //$this->app->singleton('coolsam-modules', Modules::class);
-=======
 
->>>>>>> origin/dev
         $this->app->afterResolving('filament', function () {
             foreach (Filament::getPanels() as $panel) {
                 $id = Str::of($panel->getId());
