@@ -12,3 +12,4 @@ vendor
 node_modules
 .git-blame-ignore-revsnode_modules
 vendor
+.git-blame-ignore-revs
